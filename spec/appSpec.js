@@ -14,4 +14,10 @@ describe('Berlin Clock - testing bottom minutes line (0 to 9)', function() {
 
         expect(result).toBe('Y000');
     });
+
+    it('Main should return YY00 for the bottom line when given XX:X2:XX', function() {
+        const result = main.getBottomMinutes('XX:X2:XX');
+
+        expect(result).toBe('YY00');
+    });
 });
