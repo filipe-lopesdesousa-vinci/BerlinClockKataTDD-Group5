@@ -1,11 +1,17 @@
 export class Main {
 
     getBottomMinutes(time) {
-        if(time === 'XX:X1:XX' || time === 'XX:X6:XX') return 'Y000';
-        if(time === 'XX:X2:XX') return 'YY00';
-        if(time === 'XX:X3:XX') return 'YYY0';
-        if(time === 'XX:X4:XX') return 'YYYY';
+        const parts = time.split(":");
+        const minutes = parts[1];
+        const lastDigit = minutes[minutes.length -1];
+        const lampsOn = lastDigit % 5;
 
+        if(lampsOn === 1 ) return "Y000";
+        if(lampsOn === 2 ) return "YY00";
+        if(lampsOn === 3 ) return "YYY0";
+        if(lampsOn === 4 ) return "YYYY";
+
+        
         return '0000';
     }
 }
