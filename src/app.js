@@ -14,13 +14,15 @@ export class Main {
         const minutes = parseInt(parts[1], 10);
         const lampsOn = Math.floor(minutes / 5);
 
-        if(lampsOn === 1) return "Y0000000000";
-        if(lampsOn === 2) return "YY000000000";
-        if(lampsOn === 3) return "YYR00000000";
-        if(lampsOn === 4) return "YYRY0000000";
-        if(lampsOn === 5) return "YYRYY000000";
-        if(lampsOn === 6) return "YYRYYR00000";
-        
-        return "00000000000";
+        let lamps = "";
+        for (let i = 1; i <= 11; i++) {
+            if (i <= lampsOn) {
+                lamps += (i % 3 === 0) ? "R" : "Y";
+            } else {
+                lamps += "0";
+            }
+        }
+
+        return lamps;
     }
 }
