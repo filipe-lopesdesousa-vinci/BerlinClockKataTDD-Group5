@@ -4,6 +4,7 @@ export class Main {
         if(time === 'XX:X1:XX') return 'Y000';
         if(time === 'XX:X2:XX') return 'YY00';
         if(time === 'XX:X3:XX') return 'YYY0';
+        if(time === 'XX:X4:XX') return 'YYYY';
 
         return '0000';
     }
