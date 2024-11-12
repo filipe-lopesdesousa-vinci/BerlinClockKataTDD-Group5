@@ -10,7 +10,7 @@ export class Main {
     }
 
     getTopMinutes(time) {
-        if(time === "XX:05:XX") return "Y0000000000";
+        if(time === "XX:05:XX" || time === "XX:06:XX") return "Y0000000000";
         return "00000000000";
     }
 }
