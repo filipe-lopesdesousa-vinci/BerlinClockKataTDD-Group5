@@ -45,3 +45,56 @@ describe('Berlin Clock - testing bottom minutes line (0 to 9)', function() {
         expect(result).toBe('Y000');
     });
 });
+
+
+describe('Berlin Clock - testing top minutes line (0 to 59)', function() {
+    let main = new Main();
+
+    it('Main should return 00000000000 for the top line when given XX:00:XX', function() {
+        const result = main.getTopMinutes('XX:00:XX');
+
+        expect(result).toBe('00000000000');
+    });
+
+    it('Main should return Y0000000000 for the top line when given XX:05:XX', function() {
+        const result = main.getTopMinutes('XX:05:XX');
+
+        expect(result).toBe('Y0000000000');
+    });
+
+    it('Main should return Y0000000000 for the top line when given XX:06:XX', function() {
+        const result = main.getTopMinutes('XX:06:XX');
+
+        expect(result).toBe('Y0000000000');
+    });
+
+    it('Main should return YY000000000 for the top line when given XX:10:XX', function() {
+        const result = main.getTopMinutes('XX:10:XX');
+
+        expect(result).toBe('YY000000000');
+    });
+
+    it('Main should return YYR00000000 for the top line when given XX:15:XX', function() {
+        const result = main.getTopMinutes('XX:15:XX');
+
+        expect(result).toBe('YYR00000000');
+    });
+
+    it('Main should return YYRY0000000 for the top line when given XX:20:XX', function() {
+        const result = main.getTopMinutes('XX:20:XX');
+
+        expect(result).toBe('YYRY0000000');
+    });
+
+    it('Main should return YYRYY000000 for the top line when given XX:25:XX', function() {
+        const result = main.getTopMinutes('XX:25:XX');
+
+        expect(result).toBe('YYRYY000000');
+    });
+
+    it('Main should return YYRYYR00000 for the top line when given XX:30:XX', function() {
+        const result = main.getTopMinutes('XX:30:XX');
+
+        expect(result).toBe('YYRYYR00000');
+    });
+});
