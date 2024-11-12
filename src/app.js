@@ -8,4 +8,8 @@ export class Main {
 
         return "Y".repeat(lampsOn) + "0".repeat(4 - lampsOn);;
     }
+
+    getTopMinutes(time) {
+        return "00000000000";
+    }
 }
