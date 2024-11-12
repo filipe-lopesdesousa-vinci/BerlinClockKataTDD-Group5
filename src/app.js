@@ -15,6 +15,7 @@ export class Main {
         const lampsOn = Math.floor(minutes / 5);
 
         if(lampsOn === 1) return "Y0000000000";
+        if(lampsOn === 2) return "YY000000000";
         
         return "00000000000";
     }

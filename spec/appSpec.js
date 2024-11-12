@@ -67,4 +67,10 @@ describe('Berlin Clock - testing top minutes line (0 to 59)', function() {
 
         expect(result).toBe('Y0000000000');
     });
+
+    it('Main should return YY000000000 for the top line when given XX:10:XX', function() {
+        const result = main.getTopMinutes('XX:10:XX');
+
+        expect(result).toBe('YY000000000');
+    });
 });
