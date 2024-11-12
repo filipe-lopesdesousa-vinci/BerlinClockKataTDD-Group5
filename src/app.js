@@ -10,7 +10,12 @@ export class Main {
     }
 
     getTopMinutes(time) {
-        if(time === "XX:05:XX" || time === "XX:06:XX") return "Y0000000000";
+        const parts = time.split(":");
+        const minutes = parseInt(parts[1], 10);
+        const lampsOn = Math.floor(minutes / 5);
+
+        if(lampsOn === 1) return "Y0000000000";
+        
         return "00000000000";
     }
 }
