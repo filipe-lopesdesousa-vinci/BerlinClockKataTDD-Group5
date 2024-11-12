@@ -16,6 +16,7 @@ export class Main {
 
         if(lampsOn === 1) return "Y0000000000";
         if(lampsOn === 2) return "YY000000000";
+        if(lampsOn === 3) return "YYR00000000";
         
         return "00000000000";
     }
