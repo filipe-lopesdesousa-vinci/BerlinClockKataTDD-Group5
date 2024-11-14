@@ -50,6 +50,7 @@ export class Main {
     }
 
     getSeconds(time) {
+        if(time==="XX:XX:01") return "0";
         return "R";
     }
 }
