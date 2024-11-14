@@ -1,8 +1,6 @@
 import { Main } from "../src/app.js";
-    let main = new Main();
+let main = new Main();
 describe("Berlin Clock - testing bottom minutes line (0 to 9)", function () {
-  
-
   it("Main should return 0000 for the bottom line when given XX:X0:XX", function () {
     const result = main.getBottomMinutes("XX:X0:XX");
 
@@ -47,8 +45,6 @@ describe("Berlin Clock - testing bottom minutes line (0 to 9)", function () {
 });
 
 describe("Berlin Clock - testing top minutes line (0 to 59)", function () {
-  
-
   it("Main should return 00000000000 for the top line when given XX:00:XX", function () {
     const result = main.getTopMinutes("XX:00:XX");
 
@@ -99,8 +95,6 @@ describe("Berlin Clock - testing top minutes line (0 to 59)", function () {
 });
 
 describe("Berlin Clock - testing bottom hours line (0 to 9)", function () {
-  
-
   it("Main should return 0000 for the bottom line when given X0:XX:XX", function () {
     const result = main.getBottomHours("X0:XX:XX");
 
@@ -141,59 +135,54 @@ describe("Berlin Clock - testing bottom hours line (0 to 9)", function () {
 
     expect(result).toBe("R000");
   });
-
-  
 });
 
 describe("Berlin Clock - testing Top hours line (0 to 23)", function () {
-   
+  it("Main should return 0000 for the top line when given 00:XX:XX", function () {
+    const result = main.getTopHours("00:XX:XX");
 
-    it("Main should return 0000 for the top line when given 00:XX:XX", function () {
-      const result = main.getTopHours("00:XX:XX");
-
-      expect(result).toBe("0000");
-    });
-
-    it("Main should return R000 for the top line when given 05:XX:XX", function () {
-      const result = main.getTopHours("05:XX:XX");
-
-      expect(result).toBe("R000");
-    });
-    it("Main should return R000 for the top line when given 06:XX:XX", function () {
-      const result = main.getTopHours("06:XX:XX");
-
-      expect(result).toBe("R000");
-    });
-    it("Main should return RR00 for the top line when given 10:XX:XX", function () {
-      const result = main.getTopHours("10:XX:XX");
-
-      expect(result).toBe("RR00");
-    });
+    expect(result).toBe("0000");
   });
 
-  describe("Berlin Clock - testing seconds lamp", function () {
+  it("Main should return R000 for the top line when given 05:XX:XX", function () {
+    const result = main.getTopHours("05:XX:XX");
 
-    it("Main should return R for the seconds lamp when given XX:XX:00", function () {
-      const result = main.getSeconds("XX:XX:00");
-  
-      expect(result).toBe("R");
-    });
-
-    it("Main should return 0 for the seconds lamp when given XX:XX:01", function () {
-        const result = main.getSeconds("XX:XX:01");
-    
-        expect(result).toBe("0");
-      });
-
-    it("Main should return R for the seconds lamp when given XX:XX:02", function () {   
-        const result = main.getSeconds("XX:XX:02");
-    
-        expect(result).toBe("R");
-    });
-
-    it("Main should return 0 for the seconds lamp when given XX:XX:03", function () {   
-        const result = main.getSeconds("XX:XX:03");
-    
-        expect(result).toBe("0");
-    });
+    expect(result).toBe("R000");
   });
+  it("Main should return R000 for the top line when given 06:XX:XX", function () {
+    const result = main.getTopHours("06:XX:XX");
+
+    expect(result).toBe("R000");
+  });
+  it("Main should return RR00 for the top line when given 10:XX:XX", function () {
+    const result = main.getTopHours("10:XX:XX");
+
+    expect(result).toBe("RR00");
+  });
+});
+
+describe("Berlin Clock - testing seconds lamp", function () {
+  it("Main should return R for the seconds lamp when given XX:XX:00", function () {
+    const result = main.getSeconds("XX:XX:00");
+
+    expect(result).toBe("R");
+  });
+
+  it("Main should return 0 for the seconds lamp when given XX:XX:01", function () {
+    const result = main.getSeconds("XX:XX:01");
+
+    expect(result).toBe("0");
+  });
+
+  it("Main should return R for the seconds lamp when given XX:XX:02", function () {
+    const result = main.getSeconds("XX:XX:02");
+
+    expect(result).toBe("R");
+  });
+
+  it("Main should return 0 for the seconds lamp when given XX:XX:03", function () {
+    const result = main.getSeconds("XX:XX:03");
+
+    expect(result).toBe("0");
+  });
+});
