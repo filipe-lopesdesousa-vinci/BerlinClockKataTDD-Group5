@@ -27,7 +27,7 @@ export class Main {
     }
 
     getBottomHours(time) {
-        if (time === "X1:XX:XX") {
+        if (time === "X1:XX:XX" || time === "X6:XX:XX") {
             return "R000";
         }
         if (time === "X2:XX:XX") {
