@@ -1,7 +1,7 @@
 import { Main } from "../src/app.js";
-
+    let main = new Main();
 describe("Berlin Clock - testing bottom minutes line (0 to 9)", function () {
-  let main = new Main();
+  
 
   it("Main should return 0000 for the bottom line when given XX:X0:XX", function () {
     const result = main.getBottomMinutes("XX:X0:XX");
@@ -47,7 +47,7 @@ describe("Berlin Clock - testing bottom minutes line (0 to 9)", function () {
 });
 
 describe("Berlin Clock - testing top minutes line (0 to 59)", function () {
-  let main = new Main();
+  
 
   it("Main should return 00000000000 for the top line when given XX:00:XX", function () {
     const result = main.getTopMinutes("XX:00:XX");
@@ -99,7 +99,7 @@ describe("Berlin Clock - testing top minutes line (0 to 59)", function () {
 });
 
 describe("Berlin Clock - testing bottom hours line (0 to 9)", function () {
-  let main = new Main();
+  
 
   it("Main should return 0000 for the bottom line when given X0:XX:XX", function () {
     const result = main.getBottomHours("X0:XX:XX");
@@ -146,7 +146,7 @@ describe("Berlin Clock - testing bottom hours line (0 to 9)", function () {
 });
 
 describe("Berlin Clock - testing Top hours line (0 to 23)", function () {
-    let main = new Main();
+   
 
     it("Main should return 0000 for the top line when given 00:XX:XX", function () {
       const result = main.getTopHours("00:XX:XX");
@@ -172,7 +172,7 @@ describe("Berlin Clock - testing Top hours line (0 to 23)", function () {
   });
 
   describe("Berlin Clock - testing seconds lamp", function () {
-    let main = new Main();
+
     it("Main should return R for the seconds lamp when given XX:XX:00", function () {
       const result = main.getSeconds("XX:XX:00");
   
