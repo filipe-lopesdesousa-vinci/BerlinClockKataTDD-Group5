@@ -47,9 +47,14 @@ export class Main {
 
     }
     getSecondsLamp(time){
-        if(time === "XX:XX:01" || time === "XX:XX:03") return '0';
-
-        return 'R'; 
+        const parts = time.split(":");  
+        const seconds = parts[2];
+        const lampOn = seconds % 2;
+        if(lampOn === 0){
+            return 'R';
+        }
+        
+        return '0'; 
     }
 }
 
