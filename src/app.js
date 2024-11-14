@@ -30,6 +30,9 @@ export class Main {
         if (time === "X1:XX:XX") {
             return "R000";
         }
+        if (time === "X2:XX:XX") {
+            return "RR00";
+        }
         
         return "0000"; 
     }
