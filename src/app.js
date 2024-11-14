@@ -48,5 +48,9 @@ export class Main {
         const lampsOn = Math.floor(digit / 5);
         return lampsOn;
     }
+
+    getSeconds(time) {
+        return "R";
+    }
 }
 
