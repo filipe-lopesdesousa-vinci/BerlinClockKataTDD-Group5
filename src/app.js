@@ -27,16 +27,21 @@ export class Main {
     }
 
     getBottomHours(time) {
-        if (time === "X1:XX:XX" || time === "X6:XX:XX") {
+        const parts = time.split(":");
+        const hours = parts[0];
+        const lastDigit = hours[hours.length -1];
+        const lampsOn = lastDigit % 5;
+
+        if (lampsOn === 1) {
             return "R000";
-        }
-        if (time === "X2:XX:XX") {
+        } 
+        if (lampsOn === 2) {
             return "RR00";
         }
-        if (time === "X3:XX:XX") {
+        if (lampsOn === 3) {
             return "RRR0";
         }
-        if (time === "X4:XX:XX") {
+        if (lampsOn === 4) {
             return "RRRR";
         }
         
