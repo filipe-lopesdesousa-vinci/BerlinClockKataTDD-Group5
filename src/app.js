@@ -55,4 +55,17 @@ export class Main {
     }
     return "0";
   }
+
+
+    getBerlinClock(time) {
+        return [
+        this.getSeconds(time), 
+        this.getTopHours(time), 
+        this.getBottomHours(time),  
+        this.getTopMinutes(time), 
+        this.getBottomMinutes(time),  
+        ];
+    }
 }
+ 
+
