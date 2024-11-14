@@ -98,3 +98,50 @@ describe('Berlin Clock - testing top minutes line (0 to 59)', function() {
         expect(result).toBe('YYRYYR00000');
     });
 });
+
+describe('Berlin Clock - testing bottom hours line (0 to 9)', function() {
+    let main = new Main();
+
+    it('Main should return 0000 for the bottom line when given X0:XX:XX', function() {
+        const result = main.getBottomHours('X0:XX:XX');
+
+        expect(result).toBe('0000');
+    });
+
+    it('Main should return R000 for the bottom line when given X1:XX:XX', function() {
+        const result = main.getBottomHours('X1:XX:XX');
+
+        expect(result).toBe('R000');
+    });
+
+    it('Main should return RR00 for the bottom line when given X2:XX:XX', function() {
+        const result = main.getBottomHours('X2:XX:XX');
+
+        expect(result).toBe('RR00');
+    });
+
+    it('Main should return RRR0 for the bottom line when given X3:XX:XX', function() {
+        const result = main.getBottomHours('X3:XX:XX');
+
+        expect(result).toBe('RRR0');
+    });
+
+    it('Main should return RRRR for the bottom line when given X4:XX:XX', function() {
+        const result = main.getBottomHours('X4:XX:XX');
+
+        expect(result).toBe('RRRR');
+    });
+
+    it('Main should return 0000 for the bottom line when given X5:XX:XX', function() {
+        const result = main.getBottomHours('X5:XX:XX');
+
+        expect(result).toBe('0000');
+    });
+    it('Main should return R000 for the bottom line when given X6:XX:XX', function() {
+        const result = main.getBottomHours('X6:XX:XX');
+
+        expect(result).toBe('R000');
+    });
+       
+});
+
