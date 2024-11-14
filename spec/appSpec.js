@@ -183,6 +183,12 @@ describe('Berlin Clock - testing Seconds lamp', function () {
 
         expect(result).toBe('R');
     });
+
+    it('Main should return 0 for the seconds lamp when given XX:XX:01', function () {
+        const result = main.getSecondsLamp('XX:XX:01');
+
+        expect(result).toBe('0');
+    });
 });
 
 
