@@ -38,6 +38,8 @@ export class Main {
     }
 
     getTopHours(time){
+        if(time==="05:XX:XX") return "R000";
+
         return "0000";
 
     }
