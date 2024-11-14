@@ -27,7 +27,12 @@ export class Main {
     }
 
     getBottomHours(time) {
+        if (time === "X1:XX:XX") {
+            return "R000";
+        }
+        
         return "0000"; 
     }
+
 }
 

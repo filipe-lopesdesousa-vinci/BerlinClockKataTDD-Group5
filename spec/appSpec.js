@@ -101,12 +101,19 @@ describe('Berlin Clock - testing top minutes line (0 to 59)', function() {
 
 describe('Berlin Clock - testing bottom hours line (0 to 9)', function() {
     let main = new Main();
-    
+
     it('Main should return 0000 for the bottom line when given X0:XX:XX', function() {
         const result = main.getBottomHours('X0:XX:XX');
 
         expect(result).toBe('0000');
     });
+
+    it('Main should return R000 for the bottom line when given X1:XX:XX', function() {
+        const result = main.getBottomHours('X1:XX:XX');
+
+        expect(result).toBe('R000');
+    });
+    
 
 });
 
