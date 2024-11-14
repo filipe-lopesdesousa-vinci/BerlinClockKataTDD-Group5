@@ -190,4 +190,10 @@ describe("Berlin Clock - testing Top hours line (0 to 23)", function () {
     
         expect(result).toBe("R");
     });
+
+    it("Main should return 0 for the seconds lamp when given XX:XX:03", function () {   
+        const result = main.getSeconds("XX:XX:03");
+    
+        expect(result).toBe("0");
+    });
   });
