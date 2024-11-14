@@ -48,6 +48,7 @@ export class Main {
     }
     getSecondsLamp(time){
         if(time === "XX:XX:01") return '0';
+        
         return 'R'; 
     }
 }
