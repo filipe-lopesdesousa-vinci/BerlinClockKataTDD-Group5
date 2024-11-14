@@ -48,5 +48,14 @@ export class Main {
         const lampsOn = Math.floor(digit / 5);
         return lampsOn;
     }
+
+    getSeconds(time) {
+        const parts = time.split(":");  
+        const seconds = parseInt(parts[2]);
+        if (seconds % 2 === 0) {
+            return "R";
+        }
+        return "0";
+    }
 }
 
