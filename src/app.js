@@ -42,6 +42,7 @@ export class Main {
         const hours = parts[0];
         const lampsOn = Math.floor(hours/5);
         if(lampsOn ===1) return "R000";
+        if(lampsOn===2) return "RR00";
 
         return "0000";
 
