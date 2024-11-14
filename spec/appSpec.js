@@ -186,3 +186,16 @@ describe("Berlin Clock - testing seconds lamp", function () {
     expect(result).toBe("0");
   });
 });
+
+describe("Berlin Clock - testing the whole clock", function () {   
+    it("Main should return 0RRRRRR00YYRYYR00000YY00 for the whole clock when given 22:32:45", function () {
+        const berlinClock = main.getBerlinClock("22:32:45");    
+    
+    expect(berlinClock).toEqual(['0', "RRRR" , "RR00", "YYRYYR00000", "YY00" ]);
+    });
+    
+
+});  
+
+
+
