@@ -25,4 +25,9 @@ export class Main {
 
         return lamps;
     }
+
+    getBottomHours(time) {
+        return "0000"; 
+    }
 }
+
