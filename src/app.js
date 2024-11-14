@@ -46,5 +46,8 @@ export class Main {
         return "R".repeat(lampsOn) + ("0").repeat(4-lampsOn);
 
     }
+    getSecondsLamp(time){
+        return 'R'; 
+    }
 }
 
