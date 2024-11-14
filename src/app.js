@@ -1,10 +1,7 @@
 export class Main {
 
     getBottomMinutes(time) {
-        const parts = time.split(":");
-        const minutes = parts[1];
-        const lastDigit = minutes[minutes.length -1];
-        const lampsOn = lastDigit % 5;
+        const lampsOn = this.calculateLampsOnBottomHoursAndMinutes(time, 1);
 
         return "Y".repeat(lampsOn) + "0".repeat(4 - lampsOn);;
     }
@@ -27,14 +24,17 @@ export class Main {
     }
 
     getBottomHours(time) {
-        const parts = time.split(":");
-        const hours = parts[0];
-        const lastDigit = hours[hours.length -1];
-        const lampsOn = lastDigit % 5;
-
+       const lampsOn= this.calculateLampsOnBottomHoursAndMinutes(time, 0);
 
         return "R".repeat(lampsOn) + "0".repeat(4 - lampsOn); 
     }
 
+    calculateLampsOnBottomHoursAndMinutes(time, index) {
+        const parts = time.split(":");
+        const digit = parts[index];
+        const lastDigit = digit[digit.length - 1];
+        const lampsOn = lastDigit % 5;
+        return lampsOn;
+    }
 }
 
