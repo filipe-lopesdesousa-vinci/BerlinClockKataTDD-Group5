@@ -36,5 +36,15 @@ export class Main {
         const lampsOn = lastDigit % 5;
         return lampsOn;
     }
+
+    getTopHours(time){
+        const parts = time.split(":");
+        const hours = parts[0];
+        const lampsOn = Math.floor(hours/5);
+       
+
+        return "R".repeat(lampsOn) + ("0").repeat(4-lampsOn);
+
+    }
 }
 
