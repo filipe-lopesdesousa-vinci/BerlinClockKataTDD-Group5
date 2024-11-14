@@ -38,8 +38,10 @@ export class Main {
     }
 
     getTopHours(time){
-        if(time==="05:XX:XX" || time === "06:XX:XX")  return "R000";
-        
+        const parts = time.split(":");
+        const hours = parts[0];
+        const lampsOn = Math.floor(hours/5);
+        if(lampsOn ===1) return "R000";
 
         return "0000";
 
