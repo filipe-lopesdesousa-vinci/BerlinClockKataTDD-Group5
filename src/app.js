@@ -32,20 +32,8 @@ export class Main {
         const lastDigit = hours[hours.length -1];
         const lampsOn = lastDigit % 5;
 
-        if (lampsOn === 1) {
-            return "R000";
-        } 
-        if (lampsOn === 2) {
-            return "RR00";
-        }
-        if (lampsOn === 3) {
-            return "RRR0";
-        }
-        if (lampsOn === 4) {
-            return "RRRR";
-        }
-        
-        return "0000"; 
+
+        return "R".repeat(lampsOn) + "0".repeat(4 - lampsOn); 
     }
 
 }
