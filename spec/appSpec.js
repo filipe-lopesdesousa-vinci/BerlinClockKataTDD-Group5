@@ -126,5 +126,10 @@ describe('Berlin Clock - testing bottom hours line (0 to 9)', function() {
         expect(result).toBe('RRR0');
     });
 
+    it('Main should return RRRR for the bottom line when given X4:XX:XX', function() {
+        const result = main.getBottomHours('X4:XX:XX');
+
+        expect(result).toBe('RRRR');
+    });
 });
 
