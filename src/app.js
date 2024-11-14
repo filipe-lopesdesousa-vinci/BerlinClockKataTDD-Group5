@@ -7,9 +7,7 @@ export class Main {
     }
 
     getTopMinutes(time) {
-        const parts = time.split(":");
-        const minutes = parseInt(parts[1], 10);
-        const lampsOn = Math.floor(minutes / 5);
+        const lampsOn = this.calculateLampsOnTopHoursAndMinutes(time,1);
 
         let lamps = "";
         for (let i = 1; i <= 11; i++) {
@@ -38,13 +36,17 @@ export class Main {
     }
 
     getTopHours(time){
-        const parts = time.split(":");
-        const hours = parts[0];
-        const lampsOn = Math.floor(hours/5);
+        const lampsOn = this.calculateLampsOnTopHoursAndMinutes(time, 0);
        
-
         return "R".repeat(lampsOn) + ("0").repeat(4-lampsOn);
 
+    }
+
+    calculateLampsOnTopHoursAndMinutes(time, index) {
+        const parts = time.split(":");
+        const digit = parseInt(parts[index], 10);
+        const lampsOn = Math.floor(digit / 5);
+        return lampsOn;
     }
 }
 
