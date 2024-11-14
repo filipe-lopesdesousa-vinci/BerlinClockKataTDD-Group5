@@ -50,8 +50,12 @@ export class Main {
     }
 
     getSeconds(time) {
-        if(time==="XX:XX:01" || time==="XX:XX:03") return "0";
-        return "R";
+        const parts = time.split(":");  
+        const seconds = parseInt(parts[2]);
+        if (seconds % 2 === 0) {
+            return "R";
+        }
+        return "0";
     }
 }
 
