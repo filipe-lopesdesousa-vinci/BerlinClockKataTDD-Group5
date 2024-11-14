@@ -36,5 +36,10 @@ export class Main {
         const lampsOn = lastDigit % 5;
         return lampsOn;
     }
+
+    getTopHours(time){
+        return "0000";
+
+    }
 }
 
