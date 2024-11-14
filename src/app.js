@@ -41,10 +41,9 @@ export class Main {
         const parts = time.split(":");
         const hours = parts[0];
         const lampsOn = Math.floor(hours/5);
-        if(lampsOn ===1) return "R000";
-        if(lampsOn===2) return "RR00";
+       
 
-        return "0000";
+        return "R".repeat(lampsOn) + ("0").repeat(4-lampsOn);
 
     }
 }
